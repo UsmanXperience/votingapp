@@ -36,13 +36,13 @@ class Elevated_Button extends StatelessWidget {
             vertical: verticalPadding,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
         child: Text(
           text,
           style:  TextStyle(
-            fontSize: AppDimensions.moreextralarge,
+            fontSize: AppDimensions.twenty4,
             fontWeight: FontWeight.w500,
             fontFamily: 'Poppins',
 

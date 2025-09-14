@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:votingapp/custom_wegets/custom_elevated_button.dart';
-import 'home1.dart';
+import 'package:votingapp/diamension/diamension.dart';
+import 'package:votingapp/extension/extension.dart';
+import 'login.dart';
 
 class Home extends StatefulWidget {
   static const String id = 'Home';
@@ -18,25 +20,28 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = context.screenWidth;
+    final screenHeight = context.screenHeight;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           // Skip Button
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding:  EdgeInsets.only(right: 20, top: 50, bottom: 20),
+                padding: EdgeInsets.only(right: 20, top: 30, bottom: 20),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, Home1.id);
+                    Navigator.pushNamed(context, Login.id);
                   },
-                  child:  Text(
+                  child: Text(
                     'Skip',
                     style: TextStyle(
                       color: Colors.deepPurpleAccent,
-                      fontSize: 20,
+                      fontSize: AppDimensions.moreextralarge,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
                     ),
@@ -59,26 +64,30 @@ class _HomeState extends State<Home> {
                 // Page 1
                 Column(
                   children: [
-                     SizedBox(height: 80),
-                    Image.asset("assets/first.png", height: 263, width: 283),
-                     SizedBox(height: 80),
-                     Text(
+                    SizedBox(height: screenHeight * 0.1),
+                    Image.asset(
+                      "assets/first.png",
+                      height: screenHeight * 0.4,
+                      width: screenWidth * 0.8,
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
                       "Well come to Votely",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: AppDimensions.overlarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                     SizedBox(height: 30),
-                     Text(
+                    SizedBox(height: screenHeight * 0.01),
+                    Text(
                       "The online voting application\nCreate your account and stay\ntuned",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: AppDimensions.moreextralarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -89,26 +98,30 @@ class _HomeState extends State<Home> {
                 // Page 2
                 Column(
                   children: [
-                     SizedBox(height: 80),
-                    Image.asset("assets/second.png", height: 253, width: 260),
-                     SizedBox(height: 80),
-                     Text(
+                    SizedBox(height: screenHeight * 0.1),
+                    Image.asset(
+                      "assets/second.png",
+                      height: screenHeight * 0.45,
+                      width: screenWidth * 0.7,
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
                       "Stay Tuned",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: AppDimensions.overlarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                     SizedBox(height: 30),
-                     Text(
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
                       "Follow each candidate's election\ncampaign",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: AppDimensions.moreextralarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -119,26 +132,30 @@ class _HomeState extends State<Home> {
                 // Page 3
                 Column(
                   children: [
-                     SizedBox(height: 80),
-                    Image.asset("assets/third.png", height: 264, width: 252),
-                     SizedBox(height: 80),
-                     Text(
+                    SizedBox(height: screenHeight * 0.1),
+                    Image.asset(
+                      "assets/third.png",
+                      height: screenHeight * 0.45,
+                      width: screenWidth * 0.7,
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
                       "Make your Choice",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: AppDimensions.overlarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                     SizedBox(height: 30),
-                     Text(
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
                       "Vote for your favorite candidate,\nand view the results in real time",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: AppDimensions.moreextralarge,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -161,28 +178,29 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-           SizedBox(height: 20),
+          SizedBox(height: 20),
 
           // Next / Finish Button
-          Elevated_Button(
-            text: currentPage == 2 ? 'Finish' : 'Next',
-            textColor: Colors.white,
-            backgroundcolor: const Color(0xFF4B2AFA),
-            onPressed: () {
-              if (currentPage < 2) {
-                pageController.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              } else {
-                Navigator.pushNamed(context, Home1.id);
-              }
-            },
-            horizontalPadding: 100,
-            verticalPadding: 16,
+          Padding(
+            padding: EdgeInsets.only(bottom: 30),
+            child: Elevated_Button(
+              text: currentPage == 2 ? 'Finish' : 'Next',
+              textColor: Colors.white,
+              backgroundcolor: const Color(0xFF4B2AFA),
+              onPressed: () {
+                if (currentPage < 2) {
+                  pageController.nextPage(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                } else {
+                  Navigator.pushNamed(context, Login.id);
+                }
+              },
+              horizontalPadding: screenWidth*0.35,
+              verticalPadding: screenHeight*0.015,
+            ),
           ),
-
-          SizedBox(height: 30),
         ],
       ),
     );
