@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter_screenutil: ^5.9.0
+  device_frame: ^1.1.0
+
   flutter:
     sdk: flutter
 
@@ -82,6 +84,9 @@ flutter:
           weight: 500
         - asset: fonts/Poppins-Black.ttf
           weight: 700
+    - family: Mulish
+      fonts:
+        - asset: fonts/Mulish-Black.ttf
 
 
   #         style: italic

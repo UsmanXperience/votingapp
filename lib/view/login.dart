@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:votingapp/custom_wegets/custom_elevated_button.dart';
+import 'package:votingapp/custom_wegets/text_field.dart';
 import 'package:votingapp/diamension/diamension.dart';
 import 'package:votingapp/extension/extension.dart';
+import 'package:votingapp/view/creat_account.dart';
 import 'package:votingapp/view/otp.dart';
 
 class Login extends StatelessWidget {
@@ -35,34 +37,20 @@ class Login extends StatelessWidget {
                   'Well come to Votley',
                   style: TextStyle(
                     color: Color(0xCF0F1020),
-                    fontSize: AppDimensions.overlarge,
+                    fontSize: AppDimensions.fifteen,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.05),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'vote card number',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[400],
-                    suffixIcon: const Icon(Icons.person),
-                  ),
+                CustomTextField(
+                  hintText: 'Vote Card Number',
+                  suffixIcon: Icon(Icons.person),
                 ),
-                SizedBox(height: screenHeight * 0.1),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[400],
-                    suffixIcon: const Icon(Icons.remove_red_eye_outlined),
-                  ),
+                SizedBox(height: screenHeight * 0.05),
+                CustomTextField(
+                  hintText: 'Password',
+                  suffixIcon: Icon(Icons.remove_red_eye),
                 ),
                 Align(
                   alignment: Alignment.topRight,
@@ -72,7 +60,7 @@ class Login extends StatelessWidget {
                       fontFamily: 'Popins',
                       color: Color(0xFF4B2AFA),
                       fontWeight: FontWeight.w500,
-                      fontSize: AppDimensions.extralarge,
+                      fontSize: AppDimensions.large,
                     ),
                   ),
                 ),
@@ -93,9 +81,9 @@ class Login extends StatelessWidget {
                   textColor: Colors.black,
                   backgroundcolor: Colors.transparent,
                   onPressed: () {
-                    Navigator.pushNamed(context, Otp.id);
+                    Navigator.pushNamed(context, CreatAccount.id);
                   },
-                  horizontalPadding: screenWidth * 0.23,
+                  horizontalPadding: screenWidth * 0.27,
                   verticalPadding: screenHeight * 0.018,
                 ),
               ],

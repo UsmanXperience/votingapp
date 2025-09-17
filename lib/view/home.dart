@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
                     'Skip',
                     style: TextStyle(
                       color: Colors.deepPurpleAccent,
-                      fontSize: AppDimensions.moreextralarge,
+                      fontSize: AppDimensions.fifteen,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
                     ),
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.overlarge,
+                        fontSize: AppDimensions.fifteen,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.moreextralarge,
+                        fontSize: AppDimensions.normal,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.overlarge,
+                        fontSize: AppDimensions.fifteen,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.moreextralarge,
+                        fontSize: AppDimensions.normal,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -144,7 +144,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.overlarge,
+                        fontSize: AppDimensions.fifteen,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w700,
                       ),
@@ -155,7 +155,7 @@ class _HomeState extends State<Home> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: AppDimensions.moreextralarge,
+                        fontSize: AppDimensions.normal,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w500,
                       ),
@@ -197,8 +197,8 @@ class _HomeState extends State<Home> {
                   Navigator.pushNamed(context, Login.id);
                 }
               },
-              horizontalPadding: screenWidth*0.35,
-              verticalPadding: screenHeight*0.015,
+              horizontalPadding: screenWidth * 0.35,
+              verticalPadding: screenHeight * 0.015,
             ),
           ),
         ],

@@ -42,8 +42,8 @@ class Elevated_Button extends StatelessWidget {
         child: Text(
           text,
           style:  TextStyle(
-            fontSize: AppDimensions.twenty4,
-            fontWeight: FontWeight.w500,
+            fontSize: AppDimensions.large,
+            fontWeight: FontWeight.w400,
             fontFamily: 'Poppins',
 
 
